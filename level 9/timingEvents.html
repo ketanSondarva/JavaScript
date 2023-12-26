@@ -1,0 +1,78 @@
+<html>
+    <body>
+        <h1> click setTimeout button to see my name: </h1>
+
+        <h2> 
+            4) type of timing events: <br>
+            1.setTimeout <br>
+            2.clearTimeout <br>
+            3.setTimeInterval <br>
+            4.clearTimeInteval
+        </h2>
+
+
+        <!-- first two setTimeout and clearTimeout -->
+
+        <button id="btn"> setTimout </button>
+        <button id="btn2"> clearTimeout </button>
+        <button id="btn3"> setInterval </button>
+        <button id="btn4"> clearInterval </button>
+        
+        <p id="demo"></p>
+        
+        <!-- <button id="btn" onclick="myvar = setTimeout(myFunc, 2000)"> setTimout </button>
+        <button id="btn2" onclick="clearTimeout(myvar)"> clearTimeout </button>
+        <p id="demo">Loading...</p> -->
+
+        <script>
+            // function myFunc() {
+
+            //    const demo = document.getElementById('demo');
+            //    demo.innerHTML = "ketan sondrva!";
+               
+            // }
+            
+            const demo = document.querySelector('#demo');
+
+            const i = document.querySelector('p');
+
+            const btn = document.querySelector('#btn');
+
+            const btn2 = document.getElementById('btn2');
+
+            const btn3 = document.getElementById('btn3');
+
+            const btn4 = document.getElementById('btn4');
+            
+            let myRef;
+
+            const myFunc = () => {
+                demo.innerHTML = "Loading...";
+                myRef = setTimeout (() => {
+                    demo.innerHTML = "my name is ketan sondarva";
+                }, 2000)
+            }
+
+            let num = 0;
+            let ref;
+
+            const interval = () => {
+               ref = setInterval (() => {
+                    i.innerHTML = num += 1;
+                },1000)
+            }
+
+            const cinterval = () => {
+               clearInterval(ref);   
+            }
+            
+            btn.addEventListener('click', myFunc);
+            btn2.addEventListener('click', () => { clearTimeout(myRef) });
+            btn3.addEventListener('click', interval);
+            btn4.addEventListener('click', cinterval);
+            
+
+        </script>
+    
+    </body>
+</html>

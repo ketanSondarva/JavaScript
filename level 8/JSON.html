@@ -1,0 +1,22 @@
+<html>
+    <body>
+
+        <h1> JSON </h1>
+
+        <script>
+
+            //object:
+            var obj = { key_1: "some text", key_2: true, key_3:5 } 
+            //convert to JSON from obj:  
+            var obj_as_string = JSON.stringify(obj);
+            console.log('json form of obj: '+obj_as_string);
+            console.log(typeof(obj_as_string));
+            
+            //conver to obt from JSON:
+            var to_obj_from_JSON = JSON.parse(obj_as_string);
+            console.log('obj form of JSON: '+to_obj_from_JSON);
+            console.log(typeof(to_obj_from_JSON));
+
+        </script>
+    </body>
+</html>

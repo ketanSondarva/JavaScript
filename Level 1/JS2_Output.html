@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+    <h1>JavaScript Display Possibilities:</h1>
+
+    <h2>1.Using innerHTML:</h2>
+
+    <p id="demo"></p>
+    <script>
+      document.getElementById("demo").innerHTML =
+        "This method use document.getElementById :) ";
+    </script>
+
+    <h2>2.Using document.write:</h2>
+    <he>
+      doesn't put document.write at the end of HTML it will delete the previous
+      screen</he
+    >
+    <script>
+      document.write(5 + 5);
+    </script>
+
+    <h2>3.Using Window.Alert:</h2>
+    <h3>
+      This will show us alert window! <br />
+      We can skip window keyword
+    </h3>
+    <script>
+      window.alert(5 + 5);
+    </script>
+
+    <!--?---same--as-->
+    <script>
+      alert("I am alert without window keyword :)");
+    </script>
+    <h2>4.Using console.log</h2>
+    <h3>
+      This will generate output in console <br />
+      we can use this for debugging purpose
+    </h3>
+    <script>
+      console.log(5 + 5);
+    </script>
+
+    <h2>document.write at the end of HTML:</h2>
+
+    <button type="button" onclick="document.write(1000000+9999999)">
+      TRY THIS!
+    </button>
+    <h2>5.window.print(): used for print the current page!</h2>
+
+    <h2>There is also console.warn() and console.error() methods:</h2>
+
+    <script>
+      // warn: for specify warning meassage:
+      console.warn("this is warning message");
+
+      // error: for specify error message:
+      console.error("this is error message");
+    </script>
+  </body>
+</html>

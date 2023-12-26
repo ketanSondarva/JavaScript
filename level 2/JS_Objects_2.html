@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>JS is template based not class based.</h1>
+
+    <script>
+      // method1:
+
+      const obj = {
+        id: 10,
+        name: "ketan",
+        age: 17,
+      };
+
+      console.log(obj.id);
+
+      // method2: //using new keyword
+
+      var emp = new Object();
+      emp.id = 61;
+      emp.name = "ketan";
+      emp.age = 17;
+
+      console.log(emp.id);
+
+      //method3: // object-constructor
+
+      function obj2(id, name, age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+      }
+
+      new ojb2(55, "meet", 19);
+      console.log(obj2.id);
+    </script>
+  </body>
+</html>

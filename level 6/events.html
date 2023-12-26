@@ -1,0 +1,48 @@
+<html>
+    <body>
+
+        <!--events in javascript-->
+
+        <!--4 way to write events in javascrip-->
+
+        <!--1. inline events:-->
+
+        <button onclick = 'alert("this methos of button is not popular");'>inline event</button>
+        <button onclick = "callingFunc();">calling functon</button>
+        <button id = "btn">using id</button>
+        <button id = 'id'>using querySelector</button>
+        <script>
+            //second way to write events in javascript
+            const callingFunc = () => {
+                alert("this is calling function");
+            }
+
+            //3rd way to write event using id
+
+            const usingId = document.getElementById('btn');
+
+            //this is anonymous function:
+            usingId.onclick = function() {
+                alert("this is using getId method");
+            }
+
+            //this will over write here and only one event will run see addEventListner
+
+            usingId.onclick = function() {
+                console.log("this is using getId method");
+            }
+            //4th way to write event:
+            const query = document.querySelector('#id');
+
+            query.addEventListener('click', () => {
+                alert("this is using addEvantListner");
+            })
+            
+            //unlike anonymous function this will execute both events:
+
+            query.addEventListener('click', () => {
+                console.log("this is using addEvantListner");
+            })
+        </script>
+    </body>
+</html>

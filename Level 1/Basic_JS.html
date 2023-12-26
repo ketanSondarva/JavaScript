@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Basic JS</h1>
+    <h1>falsy value in js</h1>
+    <h1>undefined,null,0,NaN are falsy value</h1>
+    <h1>anonymous function</h1>
+
+    <script type="text/javascript" id="dcoder_script">
+      var c;
+      if (c === undefined)
+        //try with 0, null, NaN
+        console.log("true");
+      else console.log("false");
+
+      //switch case:
+
+      var a = "apple";
+
+      switch (a) {
+        case "mango":
+          console.log("mango");
+          break;
+        case "apple":
+          console.log("apple");
+          break;
+      }
+
+      //while, do..while, for loop are as similar to
+      //c and c++ langlage!!
+
+      //Function Concepts:-
+
+      //call By value
+
+      console.log("call by value");
+      //named function
+      function sum(a, b) {
+        return a + b;
+      }
+
+      var funcExp = sum(10, 20);
+
+      console.log(funcExp); //function expression
+
+      //call by reference is not supported!
+      //anonymous function
+      var plus = function (a, b) {
+        return (total = a + b);
+      };
+      console.log(typeOf(plus));
+
+      var sum1 = plus(10, 20);
+      var sum2 = plus(20, 30);
+
+      console.log("max = " + (sum1 > sum2 ? sum1 : sum2));
+    </script>
+  </body>
+</html>

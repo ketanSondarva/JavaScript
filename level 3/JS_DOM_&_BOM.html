@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css" id="dcoder_stylesheet">
+      /*#sqr {
+  
+  height: 1847px;
+  background-color: gray;
+  
+}*/
+
+      button {
+        height: 50px;
+        width: 150px;
+        font-size: 25px;
+        background-color: skyblue;
+        color: white;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body id="sqr">
+    <h1>JS Document Object Model</h1>
+    <h1>JS Browser Objeft Model</h1>
+    /* <button onclick="goback()">Back</button>
+    <script>
+      function goback() {
+        window.history.back();
+      }
+    </script>
+    */
+    <div>
+      <div id="child-one">
+        <div id="child-two">hello</div>
+        <div id="child-three"></div>
+      </div>
+    </div>
+
+    <script>
+      // BOM - window & DOM - document
+
+      console.log("inner height: " + window.innerHeight);
+      console.log("inner width: " + innerWidth);
+
+      /*alert(location.href);
+
+if( confirm("want to visit google?") )
+{
+  location.href = "www.google.com";
+}*/
+      console.log(window);
+      console.log(document); // part of window object
+      console.log("root ele: " + document.documentElement);
+      console.log(document.head);
+      console.log(document.body);
+      console.log(document.body.parentNode);
+      console.log(document.body.childNodes);
+      console.log(document.body.children);
+      console.log(document.body.firstChild);
+      //firstElementChild = return h1 element
+      console.log(document.body.firstElementChild);
+      console.log(document.body.firstElementChild.firstElementChild);
+      console.log(document.head.nextSibling);
+      console.log(document.body.previousSibling);
+      console.log(document.head.nextElementSibling);
+      console.log("for check- given ele has chils or not?");
+
+      console.log(document.body.hasChildNodes());
+      console.log(document.head.hasChildNodes());
+
+      //following code return heading ele h1
+      const fChild = document.body.firstElementChild;
+      //give color to h1
+      fChild.style.color = "red";
+
+      // query selector:
+
+      const query = document.querySelector("#child-two");
+
+      console.log(query);
+
+      query.style.color = "blue";
+      query.style.fontSize = "65px";
+    </script>
+
+    <script type="text/javascript" id="dcoder_script">
+      // BOM - window & DOM - document
+
+      console.log("inner height: " + window.innerHeight);
+      console.log("inner width: " + innerWidth);
+
+      /*alert(location.href);
+
+if( confirm("want to visit google?") )
+{
+  location.href = "www.google.com";
+}*/
+
+      console.log(document);
+      console.log("root ele: " + document.documentElement);
+      console.log(document.head);
+      console.log(document.body);
+      console.log(document.body.parentNode);
+      console.log(document.body.childNodes);
+      console.log(document.body.children);
+      console.log(document.body.firstChild);
+      //firstElementChild = return h1 element
+      console.log(document.body.firstElementChild);
+      console.log(document.body.firstElementChild.firstElementChild);
+      console.log(document.head.nextSibling);
+      console.log(document.body.previousSibling);
+      console.log(document.head.nextElementSibling);
+      console.log("for check- given ele has chils or not?");
+
+      console.log(document.body.hasChildNodes());
+      console.log(document.head.hasChildNodes());
+
+      //following code return heading ele h1
+      const fChild = document.body.firstElementChild;
+      //give color to h1
+      fChild.style.color = "red";
+
+      // query selector:
+
+      const query = document.querySelector("#child-two");
+
+      console.log(query);
+
+      query.style.color = "blue";
+      query.style.fontSize = "65px";
+    </script>
+  </body>
+</html>

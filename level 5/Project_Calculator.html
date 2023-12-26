@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            display: flex;
+            box-sizing: border-box;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .calculator-container {
+            margin-top: 45px;
+            border: solid 3px black;
+            width: 25%;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        #display {
+            font-size: 45px;
+            border: solid 2px;
+            border-radius: 4px;
+            margin: 20px;
+            width: 85%;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-evenly; */
+        }
+
+        .button {
+            border-radius: 5px;
+            font-size: 18px;
+            height: 80px;
+            width: 80px;
+            margin: 5px;
+            color: white;
+            background-color: rgb(64, 64, 216);
+            padding: 20px;
+        }
+
+        .button:hover {
+            background-color: rgb(116, 116, 235);
+        }
+
+        @media screen and (max-width:600px) {
+            .calculator-container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Basic Calculator</h1><br>
+    <div class="calculator-container">
+        <input type="text" name="display" id="display" readonly>
+        <div class="button-container">
+            <button onclick="calcEvent('C')" type="button" class="button">C</button>
+            <button onclick="calcEvent('1')" type="button" class="button">1</button>
+            <button onclick="calcEvent('2')" class="button">2</button>
+            <button onclick="calcEvent('3')" type="button" class="button">3</button>
+            <button onclick="calcEvent('+')" type="button" class="button">+</button>
+            <button onclick="calcEvent('4')" type="button" class="button">4</button>
+            <button onclick="calcEvent('5')" type="button" class="button">5</button>
+            <button onclick="calcEvent('6')" type="button" class="button">6</button>
+            <button onclick="calcEvent('-')" type="button" class="button">-</button>
+            <button onclick="calcEvent('7')" type="button" class="button">7</button>
+            <button onclick="calcEvent('8')" type="button" class="button">8</button>
+            <button onclick="calcEvent('9')" type="button" class="button">9</button>
+            <button onclick="calcEvent('*')" type="button" class="button">*</button>
+            <button onclick="calcEvent('0')" type="button" class="button">0</button>
+            <button onclick="calcEvent('.')" type="button" class="button">.</button>
+            <button onclick="calcEvent('=')" type="button" class="button">=</button>
+            <button onclick="calcEvent('/')" type="button" class="button">/</button>
+            <button onclick="calcEvent('%')" type="button" class="button">%</button>
+            <button onclick="calcEvent('d')" type="button" class="button">del</button>
+        </div>
+    </div>
+
+
+    <script>
+
+        let currentDisplay = 'hello world';
+        
+        let display = document.querySelector('#display');
+
+        let sumString = "";
+
+        display.value = "basic calculator";
+        function calcEvent(char) {
+            if(char == 'C') {
+                sumString = "";
+                display.value = "";
+                console.log("button c clicked !!");
+                return;
+            }
+            if(char == '=') {
+                let result = eval(sumString)
+                display.value = result;
+                sumString = result;
+                return;
+            }
+            if(char == 'd') {
+                sumString = sumString.slice(0, -1);
+                display.value = sumString;
+                return;
+            }
+            sumString += char;
+            display.value = sumString;
+        }
+
+        
+
+    </script>
+</body>
+</html>

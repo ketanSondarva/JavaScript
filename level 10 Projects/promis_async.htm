@@ -1,0 +1,43 @@
+<html>
+    <body>
+        <h1> Promise and async await ES8</h1>
+
+        <div id = 'jokes'></div>
+        <button id="change">Next</button>
+
+        <script>
+
+            const lol = document.querySelector('#jokes');
+            const btn = document.querySelector('#change');
+
+            
+
+            const jokesis = async () => {
+
+                const setHeader = () => {
+                Headers: {
+                    Accept: "application/json"
+                }
+            }
+
+            const res = await fetch('https://icanhazdadjoke.com', setHeader);
+
+            const data = await res.json();
+            lol.innerHTML = data.joke;
+
+                // fetch('https://icanhazdadjoke.com', setHeader)
+                // .then((res) => res.json() )
+                // .then( (data) => {
+                //     joke.innerHTML = data.joke;
+                // })
+                // .catch((err) => { 
+                //     console.log(err);
+                // })
+
+            }
+
+            btn.addEventListener('click', jokesis);
+            jokesis();
+        </script>
+    </body>
+</html>

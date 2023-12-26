@@ -1,0 +1,50 @@
+<html>
+    <body>
+
+        <!-- input events in js and getting value of input by js. -->
+
+        <label for="name">Enter your name:</label>
+        <input type="text" name="name"  id="urName">
+        <label for="select"> select flavour: </label>
+
+        <select name="select" id="sel" onchange="ele()">
+
+            <option value="" id = "first">select one</option>
+            <option value="choclate">chocolate</option>
+            <option value="vanilla">vanilla</option>
+            <option value="strawberry">strawberry</option>
+
+        </select>
+        <div id="res"> msg will prtnt here </div>
+
+        <script>
+            const ele = () => {
+
+                // getting value of id
+                const name_change = document.getElementById('urName').value;
+                const item = document.getElementById('sel');
+                const result = document.getElementById('res');
+
+                // const fitst = document.querySelector("#first"); 
+                // first.style.display = "none"; // instead:
+                item.children[0].style.display = "none";
+
+                // print values of id by Reference 
+                result.innerHTML = name_change+" wants "+item.value+" flavour icecream!!";
+            }
+
+                // const name = document.getElementById('urName');
+
+                // urName.addEventListner('change', () => {
+
+                // const uname = name.value;
+                // const ice = document.getElementById('sel');
+                // const result = document.getElementById('res');
+                
+                // // // print values of id by Reference 
+                // result.innerHTML = uname+" wants "+ice+" flavour icecream!!";
+                // });
+
+        </script>
+    </body>
+</html>

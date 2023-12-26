@@ -1,0 +1,31 @@
+<html lang="en">
+<body>
+
+    <h1>Cart is empty !!</h1>
+    
+    <button onclick="addToCart()">Add to cart</button>
+    <button onclick="removeItem()">Remove Item</button>
+
+    <script>
+
+        let cartCounter = 0;
+
+        console.log(cartCounter);
+
+        function addToCart() {
+            cartCounter++;
+            document.querySelector('h1').innerHTML = `total ${cartCounter} items in cart`;
+        }
+
+        function removeItem() {
+
+            if(cartCounter > 0)
+                cartCounter--;
+
+            document.querySelector('h1').innerHTML = `total ${cartCounter} items in cart`;
+            
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>ECMAScript 6 JS</h1>
+    <h1>New features</h1>
+    <h1>1.variable declaration:</h1>
+    <h2>let : block scope, modifiable</h2>
+    <h2>const: global scope, unmodifiable</h2>
+    <h2>var: global scope, modifiable</h2>
+    <br />
+    <br />
+    <h1>2.template literals(template string)</h1>
+    <br />
+    <br />
+    <h1>3.for...in and for...of loop.</h1>
+    <h1>4.Array Methods.</h1>
+    <h1>5.String Methods</h1>
+    <h1>6.Date and Time Methods</h1>
+    <h1>7.Math object</h1>
+
+    <script></script>
+
+    <script type="text/javascript" id="dcoder_script">
+      //1.variable declaration ####################
+
+      //var: global scope, modifiable
+      //new -->
+      //const: block scope, unmodifiable
+      //let: block scope, modifiable
+
+      //2.template literals #######################
+
+      console.log("template literals");
+
+      for (let i = 1; i <= 10; i++) {
+        let t = 12;
+
+        //console.log(t + "*" + i + "=" + t*i);
+
+        console.log(`${t} * ${i} = ${t * i}`);
+      }
+
+      //3.default parameter ######################
+
+      //dont need to define u already know 😆
+
+      //4.Fat arrow Function #####################
+
+      //fat arrow function  vs  simple function:
+
+      /* in fat arrow function we cant call a function
+ before function declaration but in simple
+ function we can do this */
+
+      console.log(sum());
+      function sum() {
+        //template literals:
+        return `sum of a + b = ${(a = 5) + (b = 5)}`;
+      }
+
+      //must after func. declaration:
+
+      //5.for..in , for..of and for..each loop ###
+
+      var lan = ["c", "c++", "java", "php"];
+
+      console.log("for..in  loop");
+
+      //it will print index of elements 0️⃣1️⃣
+      for (let elements in lan) console.log(elements);
+
+      console.log("for..of  loop");
+
+      //it will print elements 😗
+      for (let ele of lan) console.log(ele);
+
+      //it will print elements,index as well as
+      //array 3 in 1 features 👌🏻🤩
+
+      lan.forEach(function (element, index, array) {
+        console.log(`${element} index: ${index} from: ${array}`);
+      });
+
+      // 4.Areay Methods: ########################
+
+      // 1) push & unshift
+
+      //*push - add ele/s at last
+
+      let arr = ["c", "d", "e"];
+
+      console.log("push and unshift");
+
+      arr.push("f", "g");
+      console.log(arr);
+
+      arr.unshift("a", "b");
+      console.log(arr);
+
+      //*unshift - add ele/s at first
+
+      // 2) pop & shift
+
+      let arr1 = ["f", "a", "b", "c", "z"];
+
+      //*pop - remove last ele
+
+      console.log("pop & unshift");
+      console.log(arr1.pop());
+      const unsh = arr1.unshift();
+      console.log(arr1);
+
+      // 3) splice method:
+
+      const arr2 = ["a", "b", "d"];
+
+      // add "c" at 3rd position
+
+      //.splice(position, no.ofEle, Value)
+      //no.ofEle = no. of ele/s u want to delete from
+      //a perticular position
+
+      console.log("splice method:"); // can be used for: inser / delete / update items in array
+
+      console.log("array: " + arr2);
+      console.log("add 'c' at 3rd positon:");
+      //const alpha =
+      arr2.splice(2, 0, "c");
+      console.log(arr2);
+
+      //update "a" to "A"
+
+      const index = arr2.indexOf("a");
+
+      if (index != -1) {
+        const bita = arr2.splice(index, 1, "A");
+        console.log(arr2);
+      } else console.log("data not found");
+
+      //delete "c" and "d"
+
+      const ind = arr2.indexOf("c");
+
+      if (ind != -1) {
+        const bita = arr2.splice(ind, 2);
+        console.log(arr2);
+      } else console.log("data not found");
+
+      // 4) map and reduce method
+
+      //*map
+
+      // syntax
+
+      // let newArr = arr.map(callback(currVal,index,arr){
+      //
+      //});
+
+      //map method creates new array without any changes in original array
+
+      console.log("map method:");
+
+      const ar = [1, 2, 3, 4];
+
+      const newAr = ar.map((currVal, index, arr) => {
+        return `value: ${currVal} index: ${index} arr: ${arr} \n`;
+      });
+
+      console.log(newAr);
+
+      // 5) filter method with chaining concept
+
+      const ar2 = [2, 4, 6, 8];
+
+      //multiply each eles by 2 and find no. > 10
+
+      console.log("filter method");
+
+      const ar2m = ar2
+        .map((currVal) => {
+          return currVal * 2;
+        })
+        .filter((currVal) => {
+          return currVal > 10;
+        });
+
+      console.log(ar2m);
+
+      // 6) Reduce method
+
+      //syntax:
+
+      //.reduce(accumulator,currVal,index,array)
+      //where accumulator is working like counter veriable
+
+      console.log("reduce method:");
+      const arr4 = [1, 2, 3, 4];
+
+      const arr4r = arr4.reduce((acc, currVal, index, arr) => {
+        return (acc += currVal);
+      });
+
+      console.log(arr4r);
+
+      //Chaining concept of map+filter+reduce:
+
+      console.log("Chain:");
+
+      const ar3 = [2, 4, 6, 8];
+
+      const ar3m = ar3
+        .map((currVal) => {
+          return currVal * 2;
+        })
+        .filter((currVal) => {
+          return currVal > 10;
+        })
+        .reduce((acc, currVal) => {
+          return (acc += currVal);
+        });
+
+      console.log(ar3m);
+
+      //***** IMP ****
+      //covert 2d array to 1d array with reduce method
+
+      console.log("2d Array to 1d Array:");
+
+      const arr2d = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+        [7, 8],
+      ];
+
+      const arrTo1d = arr2d.reduce((acc, currVal) => {
+        return acc.concat(currVal);
+      });
+
+      console.log(arrTo1d);
+
+      // 5.String Methods ########################
+
+      // 1) string length and escape character, indexOf
+
+      let str = "hello world";
+
+      console.log("string methods:");
+      console.log("String len: " + str.length);
+
+      //use of escape character
+      //--printing quotes:
+
+      let str1 = 'hello "world"';
+      console.log(str1);
+
+      //printing quote with using oposite quotes
+      console.log('hello "world"');
+
+      //indexOf method: indexOf('val', count from);
+
+      console.log("indexOf: " + str.indexOf("w", 5));
+
+      // 2) string serching:
+
+      let ser = str.search("wo");
+      console.log("search: " + ser);
+
+      // 3) string extracting
+
+      let ext = str.slice(0, 4);
+      console.log("extracting: " + ext);
+
+      let ext1 = str.slice(3, -3);
+      console.log("extra 2: " + ext1);
+
+      // 3) sub string concept
+
+      let sub = str.substr(0, 4);
+      console.log("sub string: " + sub);
+
+      //note: dont give negative value in substr()
+      //if u give than it will count from 0.
+
+      // 4) strung replace
+
+      let rep = str.replace("hello", "HELLO");
+      console.log("string replace: " + rep);
+
+      // 5) extracting characters
+
+      let chr = str.charAt(7);
+      console.log("char extracting: " + chr);
+
+      let chr1 = str.charCodeAt(7);
+      console.log("it is unicode: " + chr1);
+
+      //property access with str[index]:
+      console.log("it is property access: " + str[0]);
+
+      // 6) Other methods
+
+      console.log("\nOther methods: ");
+
+      let str2 = "HELLO world";
+
+      console.log(str2.toUpperCase());
+
+      console.log(str2.toLowerCase());
+
+      //string concatenation:
+
+      let fname = "meet";
+      let lname = "savaliya";
+
+      console.log(fname + lname);
+      console.log(`${fname}  ${lname}`);
+      console.log(fname.concat(lname));
+      console.log(fname.concat(" ", lname));
+
+      //converting string to array:
+
+      let txt = "a,b,c,d,e";
+
+      console.log(txt.split(","));
+      console.log(txt.split(" "));
+      console.log(txt.split("|"));
+
+      // 6. Date And Time Methods
+
+      // 1) Date Mathods with date object
+
+      // syntax:
+      //new date(year, month, day, hour, minutes, second, milliseconds)
+
+      let currDate = new Date();
+      console.log("current date: " + currDate);
+
+      console.log(new Date());
+      console.log(new Date().toLocaleString());
+      console.log(new Date().toString());
+      console.log(Date.now());
+
+      let t = new Date(2021, 8, 13, 6, 0, 50);
+      //console.log(t);
+      console.log("my birthday: " + t.toLocaleString());
+
+      let t1 = new Date(2021);
+      console.log("note this: " + t1.toLocaleString());
+
+      // Date("dateString")
+
+      let t2 = new Date("October, 13, 2021 06:00:50");
+      console.log("use of date string: " + t2.toLocaleString());
+
+      //another way to get day
+
+      console.log(Date.now()); //o/p: 1628369766523
+      console.log(new Date(1628369766523));
+
+      // Date ---- get mehod
+
+      let t3 = new Date();
+
+      console.log("get method in date:");
+
+      console.log(t3.getFullYear());
+      console.log(t3.getMonth());
+      console.log(t3.getDate());
+      console.log(t3.getDay());
+
+      // Date ---- set method
+
+      let t4 = new Date();
+
+      console.log("set method in date");
+      console.log(t4.setFullYear(2022));
+      console.log(t4.setMonth(12));
+      console.log(t4.setDate(13));
+      console.log(t4.setFullYear(2022, 8, 13));
+
+      // Time ---- get mehod
+
+      let t5 = new Date();
+
+      console.log("get method in Time:");
+
+      console.log(t5.getHours());
+      console.log(t5.getMinutes());
+      console.log(t5.getSeconds());
+      console.log(t5.getMilliseconds());
+      console.log(t3.getTime());
+
+      // Time ---- set mehod
+
+      let t6 = new Date();
+
+      console.log("set method in Time:");
+
+      console.log(t6.setHours(5));
+      console.log(t6.setMinutes(5));
+      console.log(t6.setSeconds(5));
+      console.log(t6.setMilliseconds(34));
+
+      // 7. Math object
+
+      console.log("value of PI: " + Math.PI);
+      console.log("power 2 rest to 3: " + Math.pow(2, 3));
+      console.log("sqrt of 25: " + Math.sqrt(25));
+      console.log("ciel: " + Math.ceil(2.4));
+      console.log("floor: " + Math.floor(2.4));
+      console.log("round: " + Math.round(10.2565));
+      console.log("absolute: " + Math.abs(-6.23));
+      console.log("trunc: " + Math.trunc(-6.23));
+      console.log("min val: " + Math.min(2, -22, -3, 50, 60, 0));
+      console.log("max val:" + Math.max(2, -22, 7, 90, 200));
+
+      //we can access this method with variable like:
+
+      let flr = Math.floor(2.4);
+      console.log("with let: " + flr);
+
+      // Random method
+
+      console.log("return 0.somthing: " + Math.random());
+
+      // * by 10 we get decimal adjustment:
+      console.log("adjust decimal: " + Math.random() * 10);
+
+      // finally for get random from 1 to 10:
+      let random = Math.floor(Math.random() * 10);
+      console.log("random 1 to 10: " + random);
+
+      //random no. between specifid limit
+      let random2 = Math.floor(Math.random() * 100);
+      console.log("random 1 to 100: " + random2);
+
+      // to generate random number form 1 to 10:
+      Math.ceil(Math.random() * 10);
+      // to generate random number from 1 to 100:
+      Math.ceil(Math.random() * 100);
+      // to generate random number from 1 to 3:
+      Math.ceil(Math.random() * 3);
+    </script>
+  </body>
+</html>

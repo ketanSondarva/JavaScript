@@ -1,0 +1,73 @@
+<html>
+  <body>
+    <h1>Function Currying:</h1>
+    <h2>
+      lets learn about synchronous and asyncronous function befrore to code
+      this.
+    </h2>
+
+    <script>
+      console.log("synchronus function:");
+
+      function fun1() {
+        console.log("block of fun1");
+      }
+
+      function fun2() {
+        console.log("fun2 is run");
+        fun1();
+        console.log("fun2 is run");
+      }
+
+      fun2();
+
+      console.log("asynchronus function:");
+
+      function fun3() {
+        setTimeout(() => {
+          console.log("block of fun1"); // it will execute last because it take a little time
+        }, 200);
+      }
+
+      function fun4() {
+        console.log("fun2 is run");
+        fun3();
+        console.log("fun2 is run again !!");
+      }
+
+      fun4();
+
+      //after this function curying is:
+
+      // function sum(num1) {
+      //     return function(num2){
+      //         return function(num3) {
+      //             console.log(num1+num2+num3);
+      //         }
+      //     }
+      // }
+
+      // sum(2)(5)(9);
+
+    //   function func1(num1) {
+    //     console.log(num1);
+    //     return function func2(num2) {
+    //       console.log(num1 + num2);
+    //       return function (num3) {
+    //         console.log(num1 + num2 + num3);
+    //       };
+    //     };
+    //   }
+
+    // func1(2)(3)(5);
+
+      //this program using arrow function:
+
+      const sum = (num1) => (num2) => (num3) => console.log(num1 + num2 + num3);
+      console.log("sum is: ");
+
+      // this is function currying:
+      sum(2)(5)(9);
+    </script>
+  </body>
+</html>

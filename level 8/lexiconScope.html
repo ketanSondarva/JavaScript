@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <h1> Lexicon scope </h1>
+
+        <script>
+
+            // inner block can acquire variable of outer block but dont possible vice versa! this is lexicon scope
+
+            let a = 'hello';
+
+            // outer block:
+            const first = () => {
+                let b = ' world';
+
+                const second = () => { //inner block
+                    let c = ' js is awesome!!';
+                    console.log(a+b+c);
+                }
+                second();
+            }
+
+            first();
+
+            // clouser also work like this           
+
+        </script>
+    </body>
+</html>

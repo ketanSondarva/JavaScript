@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <h1>2. higher order function and callback function: </h1>
+
+        <script>
+
+            // these 4 are callback function because we passed these as a parameter:
+            const sum = (a,b) => {
+                return a+b;
+            }
+            const sub = (a,b) => {
+                return a-b;
+            }
+            const div = (a,b) => {
+                return a/b;
+            }
+            const mul = (a,b) => {
+                return a*b;
+            }
+
+            // this is higher order function because we passed other function as a parameter:
+            const calc = (num1, num2, operator) => {
+                return operator(num1, num2);
+            }
+            // in above function operator is functional argument:
+
+            let perform = calc(5,2,mul);
+            console.log(perform);
+        </script>
+    </body>
+</html>

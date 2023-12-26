@@ -1,0 +1,52 @@
+<html>
+    <body>
+        <h1> ES10 ECMAScript 2019 </h1>
+
+        <script>
+            // this is a multi diomantion array: 
+
+            // syntax: flat(parameter) where parameter = 1,2,3,4...Infinity
+
+            // one level array convert to single diomasion
+            const arr1 = [
+                [1, 2],
+                [2, 1],
+                [3, 4],
+                [4, 3]
+            ];
+            console.log('level one no parameter:\n');
+            console.log(arr1.flat());
+            
+            // two level array convert to single diomasion
+            const arr2 = [
+                [1, 2],
+                [2, 1],
+                [3, 4],
+                [4, 3, [7, 8]]
+            ];
+            console.log('level two 2 parameter:\n');
+            console.log(arr2.flat(2));
+
+            // three level array convert to single diomasion
+            const arr3 = [
+                [1, 2],
+                [2, 1],
+                [3, 4],
+                [4, 3, [7, 8,[3]]]
+            ];
+            console.log('level three 3 parameter:\n');
+            console.log(arr3.flat(3));
+
+            // Infinity level array convert to single diomasion
+            const arr4 = [
+                [1, 2],
+                [2, 1],
+                [3, 4],
+                [4, 3, [7, 8,[3,[5,0,[2]]]]]
+            ];
+            console.log('level Infinity "Infinity" as a parameter:\n');
+            console.log(arr4.flat(Infinity));
+
+        </script>
+    </body>
+</html>

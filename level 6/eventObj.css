@@ -1,0 +1,12 @@
+.sqr {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 5%;
+}
+
+body {
+    margin-left: 30%;
+}

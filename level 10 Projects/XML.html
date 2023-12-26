@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style>
+            body {
+                background: linear-gradient(90deg, linen, lightSteelBlue);
+                box-sizing: border-box;
+            }
+            .box {
+                height: 350px;
+                background: linear-gradient(90deg, #ccd9ff, #4d79ff);
+                margin: 150px auto;
+                font-family: Arial, Helvetica, sans-serif;
+                width: 220px;
+                box-shadow: 2px 4px 200px gray;
+                border-radius: 10px;
+                padding: 30px 20px 0 20px;
+                background-color: white;
+                font-size: .6rem;
+                /* animation-iteration-count: infinite; */  
+                animation: anim 2s ease-out .2s infinite;
+            }
+
+            @keyframes anim {
+                0% {
+                    transform: scale(1);
+                }
+                /* 30% {
+                    transform: scale(1.1);
+                } */
+                50% {
+                    transform: scale(1.1);
+                }
+                /* 70% {
+                    transform: scale(1.1);
+                } */
+                100% {
+                    transform: scale(1);
+                }
+
+            }
+            img {
+                height: 100px;
+                width: 150px;
+                /* border: 1px solid black; */
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- <h1> XMLHttp Request </h1> -->
+
+        <div class="box"></div>
+        <!-- <div class="box">
+            <img src="${data.flag}" alt="flag">
+            <br>
+            <h1>${data.name}</h1>
+            <h1>${data.capital}</h1>
+            <h2>${data.nativeName}</h2>
+            <h2>${data.population}</h2>
+            <h2>${data.demonym}</h2>
+        </div> -->
+
+        <script>
+
+            const datas = document.querySelector('.box');
+
+            const req = new XMLHttpRequest();
+
+            req.open('GET', 'https://restcountries.eu/rest/v2/name/bharat');
+            req.send();
+
+            req.addEventListener('load', function() {
+                // console.log(this.responseText);
+
+                const [data] = JSON.parse(this.responseText);
+                console.log(data);
+                console.log('capital: '+data.capital);
+
+                const htlm = `
+                   <div>
+                     <img src="${data.flag}" alt="flag">
+                     </div>
+                     <br>
+                     <h1>Country: ${data.name}</h1>
+                     <h1>Capital: ${data.capital}</h1>
+                     </div>
+                     <hr>
+                     <h2>Native Name: ${data.nativeName}</h2>
+                     <h2>Population: ${data.population}</h2>
+                     <h2>Calling Code: ${data.callingCodes}</h2>
+                  </div> 
+
+                `;
+
+                datas.insertAdjacentHTML("afterbegin",htlm);
+            })
+        </script>
+    </body>
+</html>

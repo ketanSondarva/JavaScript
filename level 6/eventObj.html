@@ -1,0 +1,105 @@
+<html>
+
+    <!-- input events included -->
+    
+    <head>
+        <link rel="stylesheet" href="eventObj.css">
+    </head>
+    <body>
+        <button id="idbtn"> Event Listener </button>
+
+        <div class = 'sqr' id = 's'></div>
+
+        <p id = 'key'>key will be put here.</p>
+
+        <!-- <input type="text" onkeypress="keyPress()" onkeydown="KeyD()" onkeyup="KeyU()"> -->
+
+        <!-- same thing with even listener  -->
+        <input type="text" id="input">
+
+        <p onmousedown="down()" onmouseup="up()" id = 'btn'> my color will be change depend on ur mouse move!! </p>
+
+        <script>
+            const forth = document.getElementById('idbtn'); 
+
+            // or
+            // const forth = document.querySelector("#idbtn");
+            
+            //fat arrow function:
+
+            const check = () => {
+                console.log(event);
+                console.log(event.target);  // button
+                console.log(event.type);    // click
+            }
+
+            forth.addEventListener('click', check);
+
+            // function down() {
+            //     document.getElementById('btn').style.color = "red";
+            // }
+
+            // function up() {
+            //     document.getElementById('btn').style.color = "blue";
+            // } //  this is not recommended approach
+
+            // use even listener instead:
+
+            const btnId = document.querySelector("#btn");
+
+            document.body.addEventListener('mouseup', () => { 
+                btnId.style.color = 'red';
+                console.log("event mouseup fired: ");
+                console.log(event);
+            });
+
+            document.body.addEventListener('mousedown', () => {
+                btnId.style.color = 'blue';
+                console.log("event mouseup fired: ");
+                console.log(event);
+            });
+
+
+
+            const mouseEvent = document.getElementById('s');
+
+            mouseEvent.addEventListener('mouseenter', () => {
+                mouseEvent.style.backgroundColor = 'red';
+                console.log('mouse enter');
+            })
+
+            mouseEvent.addEventListener('mouseleave', () => {
+                mouseEvent.style.backgroundColor = 'blue';
+                console.log('mouse leave');
+            })
+
+            const keyPress = () => {
+              document.getElementById('key').innerHTML = "you press "+event.key+" and its code is: "+event.code;
+            }
+
+            // const KeyD = () => {
+            //     document.getElementById('key').innerHTML = "key is down";
+            // }
+           
+            // const KeyU = () => {
+            //     document.getElementById('key').innerHTML = "key is up";
+            // }
+
+            // writing below listener instead of above functions:
+
+            const key = document.querySelector('#key');
+            const input = document.querySelector('#input');
+
+            input.addEventListener('keyup', () => {
+                key.innerHTML = "key is up";
+            });
+
+            input.addEventListener('keydown', () => {
+                key.innerHTML = "key is down";
+            });
+
+
+        </script>
+    
+    </body>
+</html>

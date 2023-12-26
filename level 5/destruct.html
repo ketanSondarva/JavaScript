@@ -1,0 +1,53 @@
+<html>
+    <body>
+    <!-- this is feature of ES6 2015 -->
+        <script>
+
+            // the example of destructing an array and object
+
+            // ****1 array destructing
+
+            const bioData = ['ketan','sondarva',17];
+
+            // this is first and hard way t destruct an array!!
+            // const firstName = bioData[0];
+            // const lastName = bioData[1];
+            // const age = bioData[2];
+            // console.log("first name: "+firstName);
+            // console.log("last name: "+lastName);
+
+            // this is second way to destruct and so easy way to destruct an array!!
+            // let [firstName,lastName,age] = bioData;
+            // console.log("first name: "+firstName);
+            // console.log("last name: "+lastName);
+            // console.log("age: "+age);
+
+            // we can also add some values in destrcted array like this:
+            let [firstName,lastName,age,myDeg='CS'] = bioData;
+            console.log(myDeg); //CS
+
+            // this is all about array destructing the feature of ES6 2015
+
+            // ****2 Object destructing
+
+            const obj =
+            {
+                firstN: 'ketan',
+                lastN: 'sondarva',
+                myAge: 17
+            }
+
+            // this is first and hard way to destruct an object!!  
+            // const f = obj.firstN;
+            // const l = obj.lastN;
+            // const a = obj.myAge;
+            // console.log("first name: "+f);
+
+            // this is second way to destruct and so easy way to destruct an array!!
+            let {firstN, lastN, myAge} = obj;
+            console.log("first name: "+firstN);
+
+        </script>
+
+    </body>
+</html>

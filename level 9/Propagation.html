@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            #parent {
+                height: 300px;
+                width: 300px;
+                margin: 10% 0 10% 25%;
+                background-color: blueviolet;
+                padding: 90px;
+            }
+            #child {
+                height: 100px;
+                width: 100px;
+                /* margin: 90px 40px 0 30px; */
+                background-color: cyan;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> 1. events Propagation. 
+            <ul>
+                <li>bubbling propagation - bottom to top - in this propagation first child element execute and then parent.</li>
+                <li>capture propagation - top to bottom - oposite of bubbling propagation </li>
+            </ul>
+        </h1>
+
+        <h1> How can you run program in bubbling propagation?</h1> <br>
+        <h2> ANS: it is by default propagation of any program and this will run because the 
+             third parameter of the eventListener is false </h2> <br>
+
+        <h1> How can you run program in capture propagation? </h1>
+        <h2> ANS: just put the parameter of eventListener to true </h2>
+        
+        <div id="parent">
+            <div id="child"></div>
+        </div>
+
+        <script>
+            const p = document.getElementById('parent');
+            const c = document.getElementById('child');
+
+            const parent = () => {
+                alert('parent element called');
+            }
+            const child = () => {
+                alert('child element called');
+                // event.stopPropagation(); // it will prevent to execute parent function
+            }
+
+            // by default the third parameter is false and bubbling propagation will run:
+            // p.addEventListener('click', parent );
+            // c.addEventListener('click', child );
+
+            // put true as third parameter will run capture propagation:
+            
+            // p.addEventListener('click', parent, true);
+
+            // bubbling propagation:
+            // p.addEventListener('click', () => alert('parent element called'), true);
+            // c.addEventListener('click',child,true);
+
+            // capture propagation:
+            c.addEventListener('click', child);
+            p.addEventListener('click',parent);
+        </script>
+    </body>
+</html>

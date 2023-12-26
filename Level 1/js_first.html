@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--getElementById js-->
+<html>
+  <head></head>
+  <body>
+    <h1>what can java script do?</h1>
+    <h2>touch all button step by step</h2>
+    <p id="demo" fontsize="35px">javascript can change the content of html</p>
+    <!--innerHTML-->
+    <button
+      type="button"
+      onclick="document.getElementById('demo').innerHTML='hello javascript'"
+    >
+      demo
+    </button>
+    <p id="style">javascript can change the style!!</p>
+    <!--style-->
+    <button
+      type="button"
+      onclick="document.getElementById('style').style.fontSize='45px'; font.color='yellow'"
+    >
+      demo
+    </button>
+    <p id="hide">javascript can hide html element</p>
+    <!--style.display('none')-->
+    <button
+      type="button"
+      onclick="document.getElementById('hide').style.display='none'"
+    >
+      hide
+    </button>
+    <!--style.displau('block')-->
+    <button
+      type="button"
+      onclick="document.getElementById('hide').style.display='block'"
+    >
+      unhide
+    </button>
+    <h3>press above button for see hiden content</h3>
+  </body>
+</html>

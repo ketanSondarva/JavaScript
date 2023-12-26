@@ -1,0 +1,45 @@
+<html>
+    <body>
+        <h1> object properties: </h1>
+        <h1> the concept of dynamic objects of Js </h1>
+
+        <script>
+
+            // let firstName = 'ketan';
+            // const obj  = 
+            // {
+            //     firstName: 'how are you!?',
+            //     //10+7: 'is my age'  //this not allowed here
+            //     17: 'is my age'
+            // }
+
+            // console.log(obj);
+
+            let firstName = 'ketan';
+            const obj  = 
+            {
+                [firstName]: 'how are you!?',
+                [10+7]: 'is my age' //allowed in dynamic object
+            }
+
+            console.log(obj.firstName);
+            // console.log(obj.17); // will not work 
+            console.log(obj[17]); // "is my age"
+
+            //this is the concept of dynamic objects in javascript
+            console.log(obj);
+
+            let name = 'ketan';
+            let Age = 17;
+
+            const myObj = 
+            {    name,  //no need define like name: 'ketan' when u already hava been defined!!
+                 Age
+            }
+
+            console.log(myObj);
+
+
+        </script>
+    </body>
+</html>

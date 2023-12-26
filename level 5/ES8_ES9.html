@@ -1,0 +1,41 @@
+<html>
+    <body>
+
+        <h1> ES8 ECMAScript 2017 and ES9 2018 </h1>
+
+        <script>
+
+            // first thing:
+
+            const msg = 'hello world';
+
+            // it will print space before content
+            console.log(msg.padStart(25));
+
+            // it will print space after content
+            console.log(msg.padEnd(25)+"me here after 25 paddings!!");
+
+
+            // second thing:
+
+            const bioData = {
+                name: 'ketan',
+                age: 17
+            }
+
+            console.log(Object.values(bioData));
+            console.log(Object.entries(bioData));
+
+            //ES2018
+
+            // spread operator concept also suport object: syntext:  ...objName
+
+            const bioData2 = {...bioData}
+            console.log('bioData2 from bioData is:');
+            console.log(bioData2);
+
+
+        </script>
+
+    </body>
+</html>

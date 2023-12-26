@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function func() {
+        document.getElementById("funcInvoke").innerHTML =
+          "Me function! invoke using button!! ";
+      }
+    </script>
+  </head>
+  <body>
+
+    <h1>Where we can specify JS code</h1>
+
+    <h2>1.in script tag:</h2>
+
+    <p id="demo"></p>
+    <script>
+      document.getElementById("demo").innerHTML = "between script tag! ";
+    </script>
+
+    <h2>2.in head tag using function:</h2>
+    <p id="funcInvoke">Touch The button To Invoke Function!</p>
+    <button type="button" onclick="func()">Try This</button>
+    <script>
+      function func1() {
+        document.getElementById("funcInvoke2").innerHTML =
+          "This Is 3rd Method!! ";
+      }
+    </script>
+
+
+    <h2>3.functuon inside the body tag:</h2>
+    <p id="funcInvoke2">3rd Method!</p>
+    <button type="button" onclick="func1()">3rd This</button>
+    
+    <h2>3.external javascript:</h2>
+    <h3>
+      *Advantages: <br />•It seperates HTML AND JS <br />•HTML AND JS easy to
+      read &amp; maintain <br />•one JS code can be use in multiple pages
+      <br /><br /><br />*How_To_Use: <br />• for attach JS file: <br />
+      - use scr attribute in scipt tag and specify file name using .JS
+      extension!
+      <br /><br />- like:
+      <p>scr = "mycode.Js"</p>
+    </h3>
+
+    <h1>NOTE: it is best recommended to use Script before closing the body tag 
+    (i.e. at the end of the document) otherwise dom element descibed after the script tag will not be recognised!!  
+    </h1>
+
+  </body>
+</html>

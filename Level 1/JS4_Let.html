@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Creating Variables Using Let &amp; Const:</h1>
+    <p id="demo"></p>
+    <script>
+
+      // var is rarely used in morden JS
+      // let and const are more in use
+
+      var k = 10; //global_scope:)
+
+      function func() {
+        //Redeclaration:
+        var k = 2; //here_k=2
+
+        let x = 2; //scope_within_block:)
+      } //k_can_be_use_here_but_x_can't:)
+      //here_k=10
+
+      //Comparison_with_for_loop:
+
+      function for1() {
+        var i = 5;
+        for (var i = 0; i < 10; i++) {
+          //some_statement:)
+        } //here_i=10
+
+        let p = 5;
+        for (let p = 0; p < 10; p++) {
+          //some_statement
+        } //here_p=5
+      }
+
+      //Redeclaration_testing:
+
+      //for_var:
+      var t = 2; //Allowed
+      var t = 3; //Not_Allowed
+      function testing() {
+        var t = 4; //Allowed
+        var t = 5; //Not_Allowed
+      } //Same_For_let
+    </script>
+  </body>
+</html>

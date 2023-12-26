@@ -1,0 +1,107 @@
+<!-- 5th JS program 15/04/2020--><!-- The concepts of DataType--><!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>JavaScript DataType concept:</h1>
+    <h2 id="id1"></h2>
+    <h2 id="id2"></h2>
+    <h2 id="id3"></h2>
+    <h2 id="id4"></h2>
+    <h2 id="id5"></h2>
+    <h2 id="id6"></h2>
+    <h2 id="id7"></h2>
+    <h2 id="id8"></h2>
+    <script>
+      //DataType Concept in JavaScript:
+
+      var lan = 16,
+        lan2 = 2.1; //number
+
+      var name = "ketan"; //string
+
+      var obj = { Fstname: "ketan", Latname: "sondarva" };
+      //object
+
+      //JS evalute expression from lef to right:
+
+      var a = 16 + " ketan"; //here 16 consider as a string :)
+
+      document.getElementById("id1").innerHTML = a;
+
+      var b = 16 + 20 + "ketan"; //addition 16+20 added to string
+
+      document.getElementById("id2").innerHTML = b;
+
+      var c = "ketan" + 16 + 3 + 4; //1634 consider as a string
+
+      document.getElementById("id3").innerHTML = c;
+
+      //Use of quotation in string:
+
+      var str = "'string with single quotes'";
+
+      document.getElementById("id4").innerHTML = str;
+
+      var str2 = '"string with double quotes"';
+
+      document.getElementById("id5").innerHTML = str2;
+
+      //JS Number:
+
+      var x = 5,
+        y = 3.4; //both have 'number' data type
+
+      //exponential-
+      var z = 123e3; //123000
+
+      var z1 = 123e-4; //0.0123
+
+      //JS Object:
+
+      var x1 = {
+        Fstname: "ketan",
+        Lstname: "Sondarva",
+        age: 16,
+        eyecolor: "black",
+      };
+
+      document.getElementById("id6").innerHTML =
+        x1.Fstname + x1.Lstname + " is hacker and he is" + x1.age + " year old";
+
+      //JS Typeof operator:
+
+      //this is for knowledge
+      typeof "";
+      typeof "ketan";
+      typeof "3";
+      typeof "2.5";
+
+      var car; //type:undefined, value: undefined
+      var car1 = ""; //string
+
+      //JS NULL & UNDEFINED:
+
+      var x2 = {
+        Fstname: "ketan",
+        Lstname: "Sondarva",
+      };
+      x2 = null; //null keyword put it null:)
+      //type is object bcoz null is object type:)
+      document.getElementById("id7").innerHTML = typeof x2;
+
+      var x3 = undefined;
+      document.getElementById("id8").innerHTML = typeof x3;
+
+      //JS Type Checking:
+
+      typeof undefined; //unserined
+      typeof null; //object
+      typeof true; //boolean
+      typeof false; //boolean
+      typeof function myfunc() {}; //function
+      typeof t; //unrefined
+      typeof [1, 2, 3, 4]; //object
+      typeof { name: "ketan", age: 16 }; //object
+    </script>
+  </body>
+</html>

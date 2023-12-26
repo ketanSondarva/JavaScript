@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Interview Questions</h1>
+    <h1>1 - Deff. Between Null and Undefined</h1>
+    <h1>2 - What is NaN?</h1>
+    <h2>Answer: <br /></h2>
+    <h2>NaN - Not a Number is Property of global object.</h2>
+    <h2>In Other Words it is Property of global scope.</h2>
+    <h1>3 - what is diff. between == and === ?</h1>
+
+    <script>
+      //______Answer 1:
+
+      console.log("Answer 1");
+      var iAmNull = null;
+      console.log(iAmNull);
+
+      var futureUse;
+      console.log(futureUse);
+
+      //______Answer 2:
+
+      console.log("\nAnswer 2");
+      var number = 98765;
+      var myname = "ketan";
+
+      //NaN = Not a Number, global object
+      console.log(isNaN(number));
+      console.log(isNaN(myname));
+      //it returns boolean
+
+      //______Answer 3:
+
+      console.log("\nAnswer 3");
+      var num1 = 10;
+      var num2 = "10";
+
+      console.log(typeof num1);
+      console.log(typeof num2);
+
+      console.log(num1 == num2);
+      console.log(num1 === num2);
+    </script>
+  </body>
+</html>

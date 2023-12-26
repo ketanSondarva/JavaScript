@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+      //Challenge 1. Solve the below equation
+
+      console.log("Challange 1:");
+
+      console.log(20 + "21");
+
+      console.log(20 - "15");
+
+      console.log("java" + "Script");
+
+      console.log("java" - "Script");
+
+      console.log("" + "");
+
+      console.log("" + 0);
+
+      console.log(true + true);
+
+      console.log(true + false);
+
+      console.log(false + false);
+
+      console.log(true - false);
+
+      console.log(false - true);
+
+      //Challenge 2. add ele at specified position in array
+
+      console.log("Challenge 2:");
+
+      const ar = ["a", "b", "d"];
+
+      // add "c" at 3rd position
+
+      //.splice(position, no.ofEle, Value)
+      //no.ofEle = no. of ele/s u want to delete from
+      //a perticular position
+
+      // splice method can be used to insert/remove/add element 
+      const alphaa = ar.splice(2, 0, "c");
+      console.log(ar);
+
+      //Challenge 3. find sqrt of given array
+
+      console.log("Challenge 3:");
+
+      const ar2 = [25, 36, 49, 64];
+
+      const ar2map = ar2.map((currVal) => {
+        return Math.sqrt(currVal);
+      });
+
+      console.log(ar2map);
+
+      //Challenge 4. write Challenge 3 in 1 line
+
+      console.log("Challenge 4:");
+
+      const ar3 = [25, 36, 49, 64];
+
+      const ar3map = ar3.map((currVal) => Math.sqrt(currVal));
+
+      console.log(ar3map);
+
+      //Challenge 5. do not let user to enter insta bio > 230 characters
+
+      console.log("Challenge 5:");
+
+      let bio =
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ";
+
+      let ext = bio.slice(0, 230);
+
+      console.log(ext);
+
+      console.log(ext.length);
+
+      //Challenge 6. print unicode of 2nd last ele of string
+
+      console.log("Challenge 6:");
+
+      let str = "hello world";
+
+      //let last2nd = str.length-1;
+
+      let unicode = str.charCodeAt(str.length - 1);
+
+      console.log("unicode is: " + unicode);
+    </script>
+
+    <script type="text/javascript" id="dcoder_script">
+      //Challenge 1. Solve the below equation
+
+      console.log("Challange 1:");
+
+      console.log(20 + "21");
+
+      console.log(20 - "15");
+
+      console.log("java" + "Script");
+
+      console.log("java" - "Script");
+
+      console.log("" + "");
+
+      console.log("" + 0);
+
+      console.log(true + true);
+
+      console.log(true + false);
+
+      console.log(false + false);
+
+      console.log(true - false);
+
+      console.log(false - true);
+
+      //Challenge 2. add ele at specified position in array
+
+      console.log("Challenge 2:");
+
+      const arr = ["a", "b", "d"];
+
+      // add "c" at 3rd position
+
+      //.splice(position, no.ofEle, Value)
+      //no.ofEle = no. of ele/s u want to delete from
+      //a perticular position
+
+      const alpha = arr.splice(2, 0, "c");
+      console.log(arr);
+
+      //Challenge 3. find sqrt of given array
+
+      console.log("Challenge 3:");
+
+      const arr2 = [25, 36, 49, 64];
+
+      const arr2map = arr2.map((currVal) => {
+        return Math.sqrt(currVal);
+      });
+
+      console.log(arr2map);
+
+      //Challenge 4. write Challenge 3 in 1 line
+
+      console.log("Challenge 4:");
+
+      const arr3 = [25, 36, 49, 64];
+
+      const arr3map = arr3.map((currVal) => Math.sqrt(currVal));
+
+      console.log(arr3map);
+
+      //Challenge 5. do not let user to enter insta bio > 230 characters
+
+      console.log("Challenge 5:");
+
+      let biyo =
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ";
+
+      let $ext = biyo.slice(0, 230);
+
+      console.log($ext);
+
+      console.log($ext.length);
+
+      //Challenge 6. print unicode of 2nd last ele of string
+
+      console.log("Challenge 6:");
+
+      let string = "hello world";
+
+      //let last2nd = string.length-1;
+
+      let $unicode = string.charCodeAt(string.length - 1);
+      "hello".charCodeAt(0); // output: 104
+
+      console.log("unicode is: " + $unicode);
+    </script>
+  </body>
+</html>
